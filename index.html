@@ -81,6 +81,7 @@
 			<section><img src="img/early-engineers-2.png"></section>
 			<section data-background="img/early-engineers-3.png"></section>
 			<section data-background="img/90.png"></section>
+			<section data-background="img/old_pc.jpg"></section>
 			<section>
 				<h5>Стоп-фразы для HR</h5>
 				<ul>
@@ -239,12 +240,16 @@ I
             },
             'data-end-sound-start': {
                 'slidechanged': function () {
-                    audioEnd.play();
+                    if(!Reveal.isSpeakerNotes()) {
+                        audioEnd.play();
+                    }
                 }
             },
             'data-end-sound-end': {
                 'slidechanged': function () {
-                    audioEnd.pause();
+                    if(!Reveal.isSpeakerNotes()) {
+                        audioEnd.pause();
+                    }
                 }
             },
         }
